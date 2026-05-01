@@ -1,7 +1,7 @@
 {
   identity = {
-    user = "%USER%";
-    gitName = "%GIT_NAME%";
-    gitEmail = "%GIT_EMAIL%";
+    user = "moonshot";
+    gitName = "Tetsuya";
+    gitEmail = "1376490336@qq.com";
   };
 }
