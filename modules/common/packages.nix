@@ -46,46 +46,81 @@ let
     luarocks
   ];
 
-  # 基础开发工具
-  DEVELOPMENT_PACKAGES = with pkgs; [
-    yazi
-    tmux
+  # Git 相关工具
+  GIT_PACKAGES = with pkgs; [
     git
-    git-lfs
     tig
-    ripgrep
-    wget
-    fd
-    fzf
-    universal-ctags
-    neovim
-    gcc
-    gnumake
+    git-lfs
     lazygit
-    chezmoi
-    helix
-    dockerfile-language-server-nodejs
   ];
 
-  # 系统工具
-  SYSTEM_PACKAGES = with pkgs; [
-    bat
-    tree
-    coreutils
+  # 压缩工具
+  ZIP_PACKAGES = with pkgs; [
     zip
     unzip
   ];
 
+  # 文件查看与管理
+  FILE_PACKAGES = with pkgs; [
+    bat
+    yazi
+    tree
+  ];
+
+  # 编辑器
+  EDITOR_PACKAGES = with pkgs; [
+    neovim
+    helix
+    micro
+  ];
+
+  # 搜索工具
+  SEARCH_PACKAGES = with pkgs; [
+    fd
+    fzf
+    ripgrep
+    universal-ctags
+  ];
+
+  # 编译构建工具
+  BUILD_PACKAGES = with pkgs; [
+    gcc
+    gnumake
+  ];
+
+  # LSP 服务
+  LSP_PACKAGES = with pkgs; [
+    dockerfile-language-server-nodejs
+  ];
+
+  # 基础开发工具
+  DEVELOPMENT_PACKAGES = with pkgs; [
+    tmux
+    wget
+    chezmoi
+  ];
+
+  # 系统工具
+  SYSTEM_PACKAGES = with pkgs; [
+    coreutils
+  ];
 
   # 所有包组合
   HOME_MANAGER_PACKAGE_GROUPS = [
     GO_DEVELOPMENT_PACKAGES
     RUST_DEVELOPMENT_PACKAGES
     JAVASCRIPT_DEVELOPMENT_PACKAGES
-    DEVELOPMENT_PACKAGES
-    SYSTEM_PACKAGES
     PYTHON_PACKAGES
     LUA_PACKAGES
+    GIT_PACKAGES
+    ZIP_PACKAGES
+    FILE_PACKAGES
+    EDITOR_PACKAGES
+    SEARCH_PACKAGES
+    BUILD_PACKAGES
+    LSP_PACKAGES
+    DEVELOPMENT_PACKAGES
+    SYSTEM_PACKAGES
   ];
 in
 pkgs.lib.concatLists HOME_MANAGER_PACKAGE_GROUPS
