@@ -20,7 +20,7 @@ let
   # 语言开发环境
   GO_DEVELOPMENT_PACKAGES = with pkgs; [
     go
-    gotags 
+    gotags
     gopls
     delve
     go-tools
@@ -48,6 +48,7 @@ let
 
   # 基础开发工具
   DEVELOPMENT_PACKAGES = with pkgs; [
+    yazi
     tmux
     git
     git-lfs
@@ -57,9 +58,9 @@ let
     fd
     fzf
     universal-ctags
-    neovim       
-    gcc 
-    gnumake       
+    neovim
+    gcc
+    gnumake
     lazygit
     chezmoi
     helix
