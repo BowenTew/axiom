@@ -86,6 +86,7 @@ let
   BUILD_PACKAGES = with pkgs; [
     gcc
     gnumake
+    libiconv
   ];
 
   # LSP 服务

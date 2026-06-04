@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.zsh = {
@@ -38,8 +38,9 @@
       export PATH="$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH"
       export PATH="$HOME/.npm-packages/bin:$HOME/bin:$PATH"
       export PATH="$HOME/.local/share/bin:$PATH"
-      export PATH="$HOME/.cargo/bin:$PATH"
       export NPM_CONFIG_PREFIX="$HOME/.npm-packages"
+      export LIBRARY_PATH="${pkgs.libiconv}/lib:$LIBRARY_PATH"
+      export CPATH="${pkgs.libiconv}/include:$CPATH"
 
       # Load local environment overrides if present
       if [[ -f "$HOME/.zshenv.local" ]]; then
