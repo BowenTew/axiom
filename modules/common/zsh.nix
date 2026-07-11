@@ -74,6 +74,10 @@
           nix-shell '<nixpkgs>' -A "$1"
       }
 
+      vsc() {
+          open -a "Visual Studio Code" "''${@:-.}"
+      }
+
       # Load local interactive overrides if present
       if [[ -f "$HOME/.zshrc.local" ]]; then
         source "$HOME/.zshrc.local"

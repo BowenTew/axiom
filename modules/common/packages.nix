@@ -46,6 +46,15 @@ let
     luarocks
   ];
 
+  # C/C++ 开发环境
+  CPP_DEVELOPMENT_PACKAGES = with pkgs; [
+    cmake
+    ninja
+    pkg-config
+    clang-tools # 提供 clangd（LSP）与 clang-format
+    lldb
+  ];
+
   # Git 相关工具
   GIT_PACKAGES = with pkgs; [
     git
@@ -113,6 +122,7 @@ let
     JAVASCRIPT_DEVELOPMENT_PACKAGES
     PYTHON_PACKAGES
     LUA_PACKAGES
+    CPP_DEVELOPMENT_PACKAGES
     GIT_PACKAGES
     ZIP_PACKAGES
     FILE_PACKAGES
